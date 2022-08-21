@@ -73,3 +73,23 @@ chrome.runtime.onInstalled.addListener(function(details) {
       migrate_to_chrome_storage();
   }
 });
+
+// Listeners for command.
+chrome.commands.onCommand.addListener((command, tab) => {
+ if (command === 'change-profile') {
+   // const newWindow = () => {
+   //   console.log('in new window function');
+   // };
+   // chrome.windows.create(
+   //   {
+   //     url: 'change_profile.html',
+   //     type: 'popup',
+   //     width: 200,
+   //     height: 200
+   //   },
+   //   newWindow
+   // );
+   chrome.tabs.create({url: "change_profile.html"})
+   console.log(`Command "${command}" triggered from tab-id: ${tab.id}`);
+ }
+});

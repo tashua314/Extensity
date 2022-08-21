@@ -1,6 +1,6 @@
 {
   "name": "Extensity",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "manifest_version": 2,
   "description": "Quickly enable/disable Google Chrome extensions",
   "options_page": "options.html",
@@ -17,6 +17,15 @@
   "background": {
     "scripts": ["js/migration.js"],
     "persistent": false
+  },
+  "commands": {
+    "change-profile": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "MacCtrl+Shift+P"
+      },
+      "description": "Open modale for change profile."
+    }
   },
   "permissions": ["management","storage"]
 }
